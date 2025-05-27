@@ -4,7 +4,7 @@ export const Achievements = () => {
     {
       title: "AI for Impact Hackathon Winner",
       subtitle: "LinkedIn Social Challenge Winner - Asia Pacific",
-      description: "Won the LinkedIn Social Challenge with an AI solution for empowering people with disabilities. Gained recognition across LinkedIn and received Google Cloud and Hack2Skill goodies.",
+      description: "Won the LinkedIn Social Challenge with an AI solution for empowering people with disabilities. Gained recognition across LinkedIn and received Google Cloud and Hack2Skill goodies. Huge thanks to my incredible teammate - without them, we couldn't have won this social challenge!",
       year: "2024",
       type: "Hackathon",
       image: "https://i.postimg.cc/50nk8Rrn/0063ad9c-86c8-44c7-9e73-a97073fac637.jpg",
@@ -60,7 +60,7 @@ export const Achievements = () => {
   return (
     <section id="achievements" className="py-20 bg-slate-900">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent animate-fade-in hover:scale-105 transition-transform duration-300">
           Major Achievements
         </h2>
 
@@ -68,40 +68,41 @@ export const Achievements = () => {
           {achievements.map((achievement, index) => (
             <div
               key={achievement.title}
-              className={`flex flex-col md:flex-row gap-6 items-center bg-slate-800/50 p-6 rounded-xl border border-sky-500/20 hover:border-sky-400/40 transition-all duration-300 hover:scale-105 ${
+              className={`flex flex-col md:flex-row gap-6 items-center bg-slate-800/50 p-6 rounded-xl border border-sky-500/20 hover:border-sky-400/40 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-sky-500/20 group animate-fade-in ${
                 index % 2 === 1 ? "md:flex-row-reverse" : ""
               }`}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex-1 space-y-4">
                 <div className="flex items-center gap-3">
-                  <span className="px-3 py-1 bg-sky-500/10 text-sky-400 rounded-full text-sm border border-sky-500/20">
+                  <span className="px-3 py-1 bg-sky-500/10 text-sky-400 rounded-full text-sm border border-sky-500/20 group-hover:bg-sky-500/20 group-hover:border-sky-400/40 transition-all duration-300">
                     {achievement.type}
                   </span>
-                  <span className="text-gray-400">{achievement.year}</span>
+                  <span className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{achievement.year}</span>
                 </div>
                 
-                <h3 className="text-2xl font-bold text-white">{achievement.title}</h3>
-                <h4 className="text-lg text-sky-400 font-semibold">{achievement.subtitle}</h4>
-                <p className="text-gray-300 leading-relaxed">{achievement.description}</p>
+                <h3 className="text-2xl font-bold text-white group-hover:text-sky-400 transition-colors duration-300">{achievement.title}</h3>
+                <h4 className="text-lg text-sky-400 font-semibold group-hover:text-sky-300 transition-colors duration-300">{achievement.subtitle}</h4>
+                <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">{achievement.description}</p>
               </div>
               
               {(achievement.image || achievement.badge) && (
                 <div className="flex flex-col gap-4">
                   {achievement.image && (
-                    <div className="w-48 h-32 rounded-lg overflow-hidden border border-sky-500/20">
+                    <div className="w-48 h-32 rounded-lg overflow-hidden border border-sky-500/20 group-hover:border-sky-400/40 transition-all duration-300">
                       <img
                         src={achievement.image}
                         alt={achievement.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                       />
                     </div>
                   )}
                   {achievement.badge && (
-                    <div className="w-32 h-32 mx-auto rounded-lg overflow-hidden border border-sky-500/20">
+                    <div className="w-32 h-32 mx-auto rounded-lg overflow-hidden border border-sky-500/20 group-hover:border-sky-400/40 transition-all duration-300">
                       <img
                         src={achievement.badge}
                         alt={`${achievement.title} badge`}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                       />
                     </div>
                   )}
