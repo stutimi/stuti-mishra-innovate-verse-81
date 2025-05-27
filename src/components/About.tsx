@@ -1,4 +1,5 @@
 
+
 export const About = () => {
   return (
     <section id="about" className="py-20 bg-slate-800/50">
@@ -33,6 +34,22 @@ export const About = () => {
                   <li>• Google Cloud Arcade Facilitator</li>
                   <li>• LeetCode, CodeChef & Coding Ninjas Badge Holder</li>
                 </ul>
+              </div>
+
+              <div className="p-6 bg-gradient-to-r from-green-500/10 to-emerald-600/10 rounded-xl border border-green-500/20">
+                <p className="text-xl font-semibold text-green-400 mb-2">1st Year Journey</p>
+                <p className="text-gray-300 mb-3">Explore my complete first year academic and coding journey</p>
+                <a
+                  href="https://drive.google.com/file/d/1A461Jnj-UwTdrL_3WhYjnXhq5zpf8MHM/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors duration-300 hover:scale-105 transform"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+                  </svg>
+                  View 1st Year Journey
+                </a>
               </div>
             </div>
             
@@ -101,3 +118,4 @@ export const About = () => {
     </section>
   );
 };
+
