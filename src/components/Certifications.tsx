@@ -5,6 +5,7 @@ export const Certifications = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const certificates = [
+    "https://i.postimg.cc/VLTcqTC7/Screenshot-2024-12-23-081242.png",
     "https://i.postimg.cc/nLwd3PZz/f85f5043-8225-481a-af85-4b1eeced15aa.jpg",
     "https://i.postimg.cc/fTNh7JBP/Whats-App-Image-2025-05-27-at-7-03-33-AM.jpg",
     "https://i.postimg.cc/ryngNbVt/Whats-App-Image-2025-05-27-at-6-54-04-AM.jpg",
@@ -50,12 +51,58 @@ export const Certifications = () => {
     "https://i.postimg.cc/JhMNbwFJ/Whats-App-Image-2025-05-27-at-7-18-29-AM.jpg",
   ];
 
+  const codingBadges = [
+    {
+      title: "LeetCode Badges",
+      image: "https://i.postimg.cc/Kc3XZfVB/Screenshot-2025-05-27-191013.png",
+      link: "https://leetcode.com/u/stuti_mishra_gceo/"
+    },
+    {
+      title: "Coding Ninjas Badges",
+      image: "https://i.postimg.cc/X7Nwf1by/Screenshot-2025-05-27-191256.png",
+      link: "https://www.naukri.com/code360/profile/5cca2742-a442-440f-84f9-ae9a5c2f77ce"
+    },
+    {
+      title: "Coding Ninjas Achievement",
+      image: "https://i.postimg.cc/XJVvRhxf/Screenshot-2025-05-27-191226.png",
+      link: "https://www.naukri.com/code360/profile/5cca2742-a442-440f-84f9-ae9a5c2f77ce"
+    },
+    {
+      title: "Hacktoberfest Holopin Badges",
+      image: "https://i.postimg.cc/ZnzhkyJ1/Screenshot-2025-05-27-191953.png",
+      link: "https://www.holopin.io/"
+    }
+  ];
+
   return (
     <section id="certifications" className="py-20 bg-slate-800/50">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">
           Certifications & Achievements
         </h2>
+
+        {/* Coding Platform Badges */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-sky-400 mb-8 text-center">Coding Platform Badges</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {codingBadges.map((badge, index) => (
+              <a
+                key={index}
+                href={badge.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-slate-900/50 p-4 rounded-lg border border-sky-500/20 hover:border-sky-400/40 transition-all duration-300 hover:scale-105 cursor-pointer group"
+              >
+                <h4 className="text-sky-400 font-semibold mb-3 text-center group-hover:text-sky-300 transition-colors">{badge.title}</h4>
+                <img
+                  src={badge.image}
+                  alt={badge.title}
+                  className="w-full h-32 object-cover rounded"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
 
         {/* General Certifications */}
         <div className="mb-16">
