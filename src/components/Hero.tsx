@@ -1,8 +1,25 @@
 
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export const Hero = () => {
+  const { toast } = useToast();
+
+  const handleResumeDownload = () => {
+    const link = document.createElement('a');
+    link.href = 'https://i.postimg.cc/SKSbF9CY/khushi-resume-10.png';
+    link.download = 'Stuti_Mishra_Resume.png';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    toast({
+      title: "Resume downloaded!",
+      description: "Thank you for your interest.",
+    });
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Enhanced animated background particles */}
@@ -75,6 +92,7 @@ export const Hero = () => {
             size="lg"
             variant="outline"
             className="border-sky-400 text-sky-400 hover:bg-sky-400 hover:text-slate-900 px-8 py-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-sky-400/30"
+            onClick={handleResumeDownload}
           >
             <Download className="mr-2 h-4 w-4" />
             Download Resume
