@@ -28,11 +28,7 @@ export const Hero = () => {
         
         {/* Animated grid overlay */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgb(59 130 246 / 0.3) 1px, transparent 0)`,
-            backgroundSize: '50px 50px',
-            animation: 'grid-move 20s linear infinite'
-          }}></div>
+          <div className="absolute inset-0 grid-background"></div>
         </div>
 
         {/* Floating particles with enhanced animation */}
@@ -77,18 +73,18 @@ export const Hero = () => {
         {[...Array(3)].map((_, i) => (
           <div
             key={`star-${i}`}
-            className="absolute w-1 h-1 bg-white rounded-full opacity-0"
+            className="absolute w-1 h-1 bg-white rounded-full opacity-0 shooting-star"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 50}%`,
-              animation: `shooting-star 3s linear infinite ${Math.random() * 5}s`,
+              animationDelay: `${Math.random() * 5}s`,
             }}
           />
         ))}
       </div>
 
-      <div className="container mx-auto px-6 text-center relative z-10">
-        {/* Profile section with enhanced animations */}
+      <div className="container mx-auto px-6 text-center relative z-10 mt-16">
+        {/* Profile section with enhanced animations - shifted down */}
         <div className="mb-8 animate-fade-in">
           <div className="relative w-64 h-64 mx-auto mb-8 group">
             {/* Rotating border animation */}
@@ -187,10 +183,18 @@ export const Hero = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
+        .grid-background {
+          background-image: radial-gradient(circle at 1px 1px, rgb(59 130 246 / 0.3) 1px, transparent 0);
+          background-size: 50px 50px;
+          animation: grid-move 20s linear infinite;
+        }
         @keyframes grid-move {
           0% { transform: translate(0, 0); }
           100% { transform: translate(50px, 50px); }
+        }
+        .shooting-star {
+          animation: shooting-star 3s linear infinite;
         }
         @keyframes shooting-star {
           0% { 
