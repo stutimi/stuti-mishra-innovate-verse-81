@@ -1,4 +1,3 @@
-
 export const About = () => {
   return (
     <section id="about" className="py-20 bg-slate-800/50 relative overflow-hidden">
@@ -46,19 +45,6 @@ export const About = () => {
                 <p className="text-gray-300 italic group-hover:text-gray-200 transition-colors duration-300">"Learning with purpose. Innovating with impact."</p>
               </div>
 
-              {/* Internship Section */}
-              <div className="p-6 bg-gradient-to-r from-green-500/10 to-emerald-600/10 rounded-xl border border-green-500/20 animate-fade-in hover:scale-105 transition-transform duration-300 group" style={{ animationDelay: "0.8s" }}>
-                <p className="text-xl font-semibold text-green-400 mb-2 group-hover:text-green-300 transition-colors duration-300">Current Internship</p>
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-green-100 transition-colors duration-300">Image Captioning on Medical Images Using Deep Learning</h3>
-                <p className="text-green-300 font-medium mb-3 group-hover:text-green-200 transition-colors duration-300">Intern | [Team Name: PicasoPhrase]</p>
-                <p className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                  Developed a deep learning model to automatically generate accurate captions for medical images (X-rays, CT scans, MRIs) 
-                  using VGG/InceptionV3 for feature extraction and LSTM networks for caption generation. Conducted data preprocessing, 
-                  NLP-based text processing, model training, and evaluation using BLEU and ROUGE metrics. The system supports clinical 
-                  diagnostics by streamlining documentation and enhancing decision-making in healthcare.
-                </p>
-              </div>
-
               <div className="p-6 bg-gradient-to-r from-purple-500/10 to-pink-600/10 rounded-xl border border-purple-500/20 animate-fade-in hover:scale-105 transition-transform duration-300 group" style={{ animationDelay: "1s" }}>
                 <p className="text-xl font-semibold text-purple-400 mb-2 group-hover:text-purple-300 transition-colors duration-300">Experience & Involvement</p>
                 <ul className="text-gray-300 space-y-2 group-hover:text-gray-200 transition-colors duration-300">
@@ -86,6 +72,22 @@ export const About = () => {
             </div>
             
             <div className="space-y-8">
+              {/* Updated Infosys Springboard Internship with previous content */}
+              <div className="animate-fade-in" style={{ animationDelay: "0.8s" }}>
+                <h3 className="text-2xl font-bold text-sky-400 mb-6">Current Internship</h3>
+                <div className="p-6 bg-gradient-to-r from-green-500/10 to-emerald-600/10 rounded-xl border border-green-500/20 animate-fade-in hover:scale-105 transition-transform duration-300 group">
+                  <p className="text-xl font-semibold text-green-400 mb-2 group-hover:text-green-300 transition-colors duration-300">Infosys Springboard Internship 2024 - AI/ML</p>
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-green-100 transition-colors duration-300">Image Captioning on Medical Images Using Deep Learning</h3>
+                  <p className="text-green-300 font-medium mb-3 group-hover:text-green-200 transition-colors duration-300">Intern | Team Name: PicasoPhrase</p>
+                  <p className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                    Developed a deep learning model to automatically generate accurate captions for medical images (X-rays, CT scans, MRIs) 
+                    using VGG/InceptionV3 for feature extraction and LSTM networks for caption generation. Conducted data preprocessing, 
+                    NLP-based text processing, model training, and evaluation using BLEU and ROUGE metrics. The system supports clinical 
+                    diagnostics by streamlining documentation and enhancing decision-making in healthcare.
+                  </p>
+                </div>
+              </div>
+
               {/* Education Timeline */}
               <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
                 <h3 className="text-2xl font-bold text-sky-400 mb-6">Education</h3>

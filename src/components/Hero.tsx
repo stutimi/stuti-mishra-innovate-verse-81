@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Download, Code, Sparkles, Brain, Zap } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
@@ -143,23 +142,20 @@ export const Hero = () => {
             <span className="inline-block animate-bounce" style={{ animationDelay: '1s' }}>a</span>
           </h1>
           
-          {/* Enhanced internship highlight */}
+          {/* Updated competitive programmer highlight */}
           <div className="relative mb-8">
             <div className="bg-gradient-to-r from-green-500/20 via-emerald-500/20 to-teal-500/20 backdrop-blur-sm border border-green-500/30 rounded-2xl p-6 mx-auto max-w-4xl animate-fade-in hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-green-500/30 group" style={{ animationDelay: "0.2s" }}>
               <div className="flex items-center justify-center mb-4">
-                <Brain className="text-green-400 mr-3 animate-pulse" size={32} />
+                <Code className="text-green-400 mr-3 animate-pulse" size={32} />
                 <h2 className="text-2xl md:text-3xl font-bold text-green-400 group-hover:text-green-300 transition-colors duration-300">
-                  Deep Learning Research Intern
+                  Competitive Programmer
                 </h2>
               </div>
-              <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 group-hover:text-green-100 transition-colors duration-300">
-                Image Captioning on Medical Images Using Deep Learning
-              </h3>
               <p className="text-green-300 font-medium mb-2 group-hover:text-green-200 transition-colors duration-300">
-                Team: PicasoPhrase | AI/ML Healthcare Innovation
+                Logic-driven Problem Solver | Algorithm Enthusiast
               </p>
               <div className="flex flex-wrap justify-center gap-2 mt-4">
-                {['VGG/InceptionV3', 'LSTM', 'BLEU/ROUGE', 'Medical AI', 'Deep Learning'].map((tech, i) => (
+                {['LeetCode', 'CodeChef', 'Codeforces', 'GeeksforGeeks', 'Competitive Programming'].map((tech, i) => (
                   <span key={tech} className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm border border-green-500/30 hover:bg-green-500/30 hover:border-green-400/50 transition-all duration-300 animate-fade-in" style={{ animationDelay: `${0.5 + i * 0.1}s` }}>
                     {tech}
                   </span>
