@@ -76,34 +76,58 @@ export const Certifications = () => {
 
   return (
     <section id="certifications" className="py-20 bg-slate-800/50 relative overflow-hidden">
-      {/* Animated background elements */}
+      {/* Enhanced animated background elements */}
       <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(30)].map((_, i) => (
           <div
             key={i}
-            className="absolute bg-sky-400/10 rounded-full animate-pulse"
+            className="absolute bg-gradient-to-r from-sky-400/20 to-purple-400/20 rounded-full animate-float-slow"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              width: `${Math.random() * 8 + 4}px`,
-              height: `${Math.random() * 8 + 4}px`,
+              width: `${Math.random() * 12 + 6}px`,
+              height: `${Math.random() * 12 + 6}px`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${Math.random() * 6 + 4}s`,
+            }}
+          />
+        ))}
+        {/* Floating geometric shapes */}
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={`shape-${i}`}
+            className={`absolute animate-spin-slow ${
+              i % 3 === 0 ? 'bg-sky-400/10' : i % 3 === 1 ? 'bg-purple-400/10' : 'bg-green-400/10'
+            } ${i % 2 === 0 ? 'rounded-full' : 'rounded-lg rotate-45'}`}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${Math.random() * 20 + 10}px`,
+              height: `${Math.random() * 20 + 10}px`,
               animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${Math.random() * 4 + 2}s`,
+              animationDuration: `${Math.random() * 8 + 6}s`,
             }}
           />
         ))}
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent animate-fade-in hover:scale-105 transition-all duration-500">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-sky-400 via-purple-400 to-blue-600 bg-clip-text text-transparent animate-fade-in hover:scale-105 transition-all duration-500">
           Certifications & Achievements
         </h2>
 
         {/* Coding Platform Badges */}
         <div className="mb-20">
-          <h3 className="text-2xl md:text-3xl font-bold text-sky-400 mb-12 text-center animate-fade-in">
-            🏆 Coding Platform Badges
-          </h3>
+          <div className="text-center mb-12 animate-fade-in">
+            <h3 className="text-2xl md:text-3xl font-bold text-sky-400 mb-6">
+              🏆 Coding Platform Badges
+            </h3>
+            <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
+              Showcasing my competitive programming achievements across various platforms. These badges represent 
+              my dedication to problem-solving, algorithmic thinking, and continuous learning in the field of 
+              computer science and programming.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {codingBadges.map((badge, index) => (
               <a
@@ -111,7 +135,7 @@ export const Certifications = () => {
                 href={badge.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-gradient-to-br from-slate-900/80 to-slate-800/80 p-6 rounded-xl border border-sky-500/30 hover:border-sky-400/60 transition-all duration-500 hover:scale-110 hover:rotate-1 cursor-pointer animate-fade-in backdrop-blur-sm hover:shadow-2xl hover:shadow-sky-500/30"
+                className="group bg-gradient-to-br from-slate-900/80 to-slate-800/80 p-6 rounded-xl border border-sky-500/30 hover:border-sky-400/60 transition-all duration-500 hover:scale-110 hover:rotate-1 cursor-pointer animate-fade-in backdrop-blur-sm hover:shadow-2xl hover:shadow-sky-500/30 animate-bounce-gentle"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <h4 className="text-sky-400 font-bold mb-4 text-center group-hover:text-sky-300 transition-colors text-lg">
@@ -121,7 +145,7 @@ export const Certifications = () => {
                   <img
                     src={badge.image}
                     alt={badge.title}
-                    className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110 animate-pulse-gentle"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent group-hover:from-slate-900/30 transition-all duration-300" />
                 </div>
@@ -137,14 +161,21 @@ export const Certifications = () => {
 
         {/* General Certifications */}
         <div className="mb-20">
-          <h3 className="text-2xl md:text-3xl font-bold text-sky-400 mb-12 text-center animate-fade-in">
-            🚀 Hackathons & Competitions
-          </h3>
+          <div className="text-center mb-12 animate-fade-in">
+            <h3 className="text-2xl md:text-3xl font-bold text-sky-400 mb-6">
+              🚀 Hackathons & Competitions
+            </h3>
+            <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
+              A collection of certificates from various hackathons, coding competitions, and tech events. Each certificate 
+              represents hours of innovation, teamwork, and technical excellence in solving real-world problems through 
+              creative and efficient solutions.
+            </p>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
             {certificates.map((cert, index) => (
               <div
                 key={index}
-                className="group bg-gradient-to-br from-slate-900/80 to-slate-800/80 p-3 rounded-xl border border-sky-500/30 hover:border-sky-400/60 transition-all duration-500 hover:scale-110 hover:-rotate-2 cursor-pointer animate-fade-in backdrop-blur-sm hover:shadow-xl hover:shadow-sky-500/20"
+                className="group bg-gradient-to-br from-slate-900/80 to-slate-800/80 p-3 rounded-xl border border-sky-500/30 hover:border-sky-400/60 transition-all duration-500 hover:scale-110 hover:-rotate-2 cursor-pointer animate-fade-in backdrop-blur-sm hover:shadow-xl hover:shadow-sky-500/20 animate-slide-up"
                 onClick={() => setSelectedImage(cert)}
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
@@ -152,11 +183,11 @@ export const Certifications = () => {
                   <img
                     src={cert}
                     alt={`Certificate ${index + 1}`}
-                    className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-125"
+                    className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-125 animate-shimmer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent group-hover:from-slate-900/20 transition-all duration-300" />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="text-white text-xs font-bold bg-sky-500/80 px-2 py-1 rounded">
+                    <div className="text-white text-xs font-bold bg-sky-500/80 px-2 py-1 rounded animate-pulse">
                       View
                     </div>
                   </div>
@@ -168,14 +199,22 @@ export const Certifications = () => {
 
         {/* Infosys Springboard Internship */}
         <div>
-          <h3 className="text-2xl md:text-3xl font-bold text-sky-400 mb-12 text-center animate-fade-in">
-            💼 Infosys Springboard Internship 2024 - AI/ML
-          </h3>
+          <div className="text-center mb-12 animate-fade-in">
+            <h3 className="text-2xl md:text-3xl font-bold text-sky-400 mb-6">
+              💼 Infosys Springboard Internship 2024 - AI/ML
+            </h3>
+            <p className="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
+              Comprehensive certification collection from my AI/ML internship at Infosys Springboard. These certificates 
+              demonstrate my expertise in machine learning, deep learning, computer vision, and natural language processing. 
+              The internship focused on developing an advanced Image Captioning system for Medical Images using cutting-edge 
+              deep learning technologies including VGG/InceptionV3 for feature extraction and LSTM networks for caption generation.
+            </p>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
             {infosysCertificates.map((cert, index) => (
               <div
                 key={index}
-                className="group bg-gradient-to-br from-slate-900/80 to-slate-800/80 p-3 rounded-xl border border-sky-500/30 hover:border-sky-400/60 transition-all duration-500 hover:scale-110 hover:rotate-1 cursor-pointer animate-fade-in backdrop-blur-sm hover:shadow-xl hover:shadow-sky-500/20"
+                className="group bg-gradient-to-br from-slate-900/80 to-slate-800/80 p-3 rounded-xl border border-sky-500/30 hover:border-sky-400/60 transition-all duration-500 hover:scale-110 hover:rotate-1 cursor-pointer animate-fade-in backdrop-blur-sm hover:shadow-xl hover:shadow-sky-500/20 animate-float-up"
                 onClick={() => setSelectedImage(cert)}
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
@@ -183,11 +222,11 @@ export const Certifications = () => {
                   <img
                     src={cert}
                     alt={`Infosys Certificate ${index + 1}`}
-                    className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-125"
+                    className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-125 animate-glow"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent group-hover:from-slate-900/20 transition-all duration-300" />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="text-white text-xs font-bold bg-sky-500/80 px-2 py-1 rounded">
+                    <div className="text-white text-xs font-bold bg-sky-500/80 px-2 py-1 rounded animate-bounce">
                       View
                     </div>
                   </div>
@@ -200,30 +239,99 @@ export const Certifications = () => {
         {/* Enhanced Lightbox Modal */}
         {selectedImage && (
           <div
-            className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4 animate-fade-in backdrop-blur-sm"
+            className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4 animate-fade-in backdrop-blur-lg"
             onClick={() => setSelectedImage(null)}
           >
             <div className="relative max-w-5xl max-h-[90vh] animate-scale-in">
               <img
                 src={selectedImage}
                 alt="Certificate"
-                className="max-w-full max-h-full object-contain rounded-xl shadow-2xl"
+                className="max-w-full max-h-full object-contain rounded-xl shadow-2xl animate-glow-border"
               />
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 text-white bg-black/70 rounded-full w-10 h-10 flex items-center justify-center hover:bg-black/90 transition-all duration-300 hover:scale-110 hover:rotate-90"
+                className="absolute top-4 right-4 text-white bg-black/70 rounded-full w-12 h-12 flex items-center justify-center hover:bg-black/90 transition-all duration-300 hover:scale-110 hover:rotate-90 animate-pulse"
               >
-                ×
+                ✕
               </button>
               <div className="absolute bottom-4 left-4 right-4 text-center">
-                <p className="text-white bg-black/50 px-4 py-2 rounded-lg backdrop-blur-sm">
-                  Click anywhere to close
+                <p className="text-white bg-black/50 px-6 py-3 rounded-lg backdrop-blur-sm animate-fade-in">
+                  Click anywhere to close • Use arrow keys to navigate
                 </p>
               </div>
             </div>
           </div>
         )}
       </div>
+
+      <style>{`
+        @keyframes float-slow {
+          0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.4; }
+          50% { transform: translateY(-30px) rotate(180deg); opacity: 0.8; }
+        }
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes bounce-gentle {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-5px); }
+        }
+        @keyframes pulse-gentle {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.8; }
+        }
+        @keyframes slide-up {
+          from { transform: translateY(20px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes shimmer {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
+        @keyframes float-up {
+          0%, 100% { transform: translateY(0) scale(1); }
+          50% { transform: translateY(-10px) scale(1.02); }
+        }
+        @keyframes glow {
+          0%, 100% { box-shadow: 0 0 5px rgba(56, 189, 248, 0.3); }
+          50% { box-shadow: 0 0 20px rgba(56, 189, 248, 0.6); }
+        }
+        @keyframes glow-border {
+          0%, 100% { box-shadow: 0 0 20px rgba(56, 189, 248, 0.5); }
+          50% { box-shadow: 0 0 40px rgba(56, 189, 248, 0.8); }
+        }
+        
+        .animate-float-slow {
+          animation: float-slow 8s ease-in-out infinite;
+        }
+        .animate-spin-slow {
+          animation: spin-slow 20s linear infinite;
+        }
+        .animate-bounce-gentle {
+          animation: bounce-gentle 3s ease-in-out infinite;
+        }
+        .animate-pulse-gentle {
+          animation: pulse-gentle 2s ease-in-out infinite;
+        }
+        .animate-slide-up {
+          animation: slide-up 0.6s ease-out both;
+        }
+        .animate-shimmer {
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+          background-size: 200% 100%;
+          animation: shimmer 2s infinite;
+        }
+        .animate-float-up {
+          animation: float-up 4s ease-in-out infinite;
+        }
+        .animate-glow {
+          animation: glow 3s ease-in-out infinite;
+        }
+        .animate-glow-border {
+          animation: glow-border 2s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   );
 };
