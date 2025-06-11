@@ -7,7 +7,7 @@ A modern, responsive portfolio website showcasing my skills, projects, and achie
 
 ## 🌟 Live Demo
 
-Visit the live website: [Your Portfolio URL](https://your-portfolio-url.com)
+Visit the live website:  https://stuti-mishra-innovate-verse.lovable.app/ 
 
 ## 🛠️ Tech Stack
 
