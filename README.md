@@ -3,7 +3,7 @@
 
 A modern, responsive portfolio website showcasing my skills, projects, and achievements in software development and competitive programming.
 
-![Portfolio Screenshot](https://i.postimg.cc/rw3Vh7XZ/Screenshot-2025-05-07-231900.png)
+![Portfolio Screenshot](<a href="https://ibb.co/qMy3PG6B"><img src="https://i.ibb.co/TBvxFXyc/Screenshot-2025-06-21-222947.png" alt="Screenshot-2025-06-21-222947" border="0"></a>)
 
 ## 🌟 Live Demo
 
