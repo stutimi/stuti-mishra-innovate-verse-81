@@ -7,7 +7,7 @@ A modern, responsive portfolio website showcasing my skills, projects, and achie
 
 ## 🌟 Live Demo
 
-Visit the live website:  https://stuti-mishra-innovate-verse.lovable.app/ 
+Visit the live website:  https://stuti-mishra-innovate-verse-12.lovable.app/ 
 
 ## 🛠️ Tech Stack
 
